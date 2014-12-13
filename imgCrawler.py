@@ -2,8 +2,8 @@ import praw
 r = praw.Reddit(user_agent='Image crawler by /u/leonlg')
 
 """ Choose number of posts and what subreddit here """
-number_of_images = 1000
-subreddit = 'earthporn'
+number_of_images = raw_input("How many images do you want?")
+subreddit = raw_input("What subreddit do you want to crawl?")
 
 submissions = r.get_subreddit(subreddit).get_hot(limit=number_of_images)
 
@@ -19,7 +19,7 @@ for i, sub in enumerate(submissions):
         style += ' #img%d { background: url(%s); }' % ( i, sub.url )
         content += '<div id="img%d" class="img"></div>\n' % i
 
-for k in range(number_of_images):
+for k in range(int(number_of_images)):
     style += '#img%d,' % k
 style = style[:-1]
 style += '{ background-size: cover; background-attachment: fixed; }'
