@@ -1,11 +1,13 @@
 import praw
 r = praw.Reddit(user_agent='Image crawler by /u/leonlg')
 
+""" Choose number of posts and what subreddit here """
 number_of_images = 1000
 subreddit = 'earthporn'
 
 submissions = r.get_subreddit(subreddit).get_hot(limit=number_of_images)
 
+""" Open files where to put images """
 stylesheet = open('style.css', 'w')
 html = open('index.html', 'w')
 
@@ -28,3 +30,5 @@ html.write(content)
 stylesheet.write(style)
 html.close()
 stylesheet.close()
+
+print("Finished. Open index.html and enjoy")
