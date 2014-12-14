@@ -1,5 +1,6 @@
 import praw
-r = praw.Reddit(user_agent='Image crawler by /u/leonlg')
+import subprocess, os
+r = praw.Reddit(user_agent='Image crawler by /u/leonlg v1.0.2')
 
 """ Choose number of posts and what subreddit here """
 number_of_images = raw_input("How many images do you want?")
@@ -31,4 +32,4 @@ stylesheet.write(style)
 html.close()
 stylesheet.close()
 
-print("Finished. Open index.html and enjoy")
+print("Process finished, open index.html")
