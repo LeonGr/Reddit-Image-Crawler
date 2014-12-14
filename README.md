@@ -9,3 +9,7 @@ How to use:
 - run imageCrawl.py from your terminal
 - open index.html
 - enjoy your images!
+
+(you need praw to use this)
+
+P.S. I recommend to go to /r/earthporn
